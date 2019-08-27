@@ -1,0 +1,41 @@
+{
+  "name": "Transaction",
+  "plural": "Transaction",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "customer_name": {
+      "type": "string",
+      "required": true
+    },
+    "customer_id": {
+      "type": "string",
+      "required": true
+    },
+    "commodity_name": {
+      "type": "string",
+      "required": true
+    },
+    "commodity_id": {
+      "type": "string",
+      "required": true
+    },
+    "commodity_quantity": {
+      "type": "number"
+    },
+    "price": {
+      "type": "number"
+    },
+    "date": {
+      "type": "date",
+      "defaultFn": "now"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

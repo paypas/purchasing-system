@@ -1,13 +1,13 @@
 'use strict';
 
-module.exports = function(Customer) {
-    Customer.remoteMethod(
+module.exports = function(Admin) {
+    Admin.remoteMethod(
         'getNameLike',
         {
             description:'get name like',
             accepts:[
                 {
-                    arg:'firstname', type:'string'
+                    arg:'name', type:'string'
                 }
             ],
             returns:{
@@ -18,19 +18,19 @@ module.exports = function(Customer) {
             }
         }
     );
-    Customer.getNameLike = function(firstname, callback){
+    Admin.getNameLike = function(name, callback){
         new Promise(function(resolve, reject){
             //filter
             var filter = {
                 where:{
-                    firstname:{
-                        like: firstname
+                    name:{
+                        like: name
                     }
                 }
             }
 
             //querying filter
-            Customer.find(filter, function(err, result){
+            Admin.find(filter, function(err, result){
                 if(err) reject(err)
                 if(result === null){
                     err = new Error("nama tidak ditemukan")
@@ -50,7 +50,7 @@ module.exports = function(Customer) {
 
 
 
-    Customer.remoteMethod(
+    Admin.remoteMethod(
         'searchById',
         {
             description:'search by id',
@@ -67,10 +67,10 @@ module.exports = function(Customer) {
             }
         }
     );
-    Customer.searchById = function(id, callback){
+    Admin.searchById = function(id, callback){
         new Promise(function(resolve, reject){
             //querying filter
-            Customer.findById(id, function(err, result){
+            Admin.findById(id, function(err, result){
                 if(err) reject(err)
                 if(result === null){
                     err = new Error("nama tidak ditemukan")
