@@ -18,13 +18,13 @@ module.exports = function(Transaction) {
             }
         }
     );
-    Transaction.getNameLike = function(name, callback){
+    Transaction.getNameLike = function(customer_name, callback){
         new Promise(function(resolve, reject){
             //filter
             var filter = {
                 where:{
-                    name:{
-                        like: name
+                    customer_name:{
+                        like: customer_name
                     }
                 }
             }

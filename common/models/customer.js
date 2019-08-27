@@ -86,4 +86,10 @@ module.exports = function(Customer) {
             callback(err);
         });
     }
+
+
+    // Customer.hasMany(Transaction, {
+    //     as: 'transaction', // default to the relation name - emailAddresses
+    //     foreignKey: 'customer_id'// default to emailAddressItems
+    //   });
 };
